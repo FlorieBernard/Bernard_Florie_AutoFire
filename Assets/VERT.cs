@@ -13,7 +13,7 @@ public class VERT : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             button.position -= Vector3.up * buttonDownDistance;
         }

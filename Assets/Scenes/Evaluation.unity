@@ -557,7 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700198803}
   - component: {fileID: 700198804}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 852210917}
   - component: {fileID: 852210919}
   - component: {fileID: 852210918}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89110402e8834a48b33508d2757f772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1494699155}
+  button: {fileID: 1682648627}
   buttonDownDistance: 100
 --- !u!1 &1849714498
 GameObject:
@@ -1547,7 +1547,7 @@ GameObject:
   - component: {fileID: 1972140045}
   - component: {fileID: 1972140047}
   - component: {fileID: 1972140046}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
