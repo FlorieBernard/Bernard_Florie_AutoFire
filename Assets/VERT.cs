@@ -2,28 +2,36 @@ using UnityEngine;
 
 public class VERT : MonoBehaviour
 {
-    public Transform button; 
-    public float buttonDownDistance = 0.1f; 
+    public float sinkDistance = 0.5f; 
+    public float sinkSpeed = 0.1f; 
+    public LayerMask playerLayer; 
 
-    private Vector3 buttonStartPosition; 
+    private Vector3 initialPosition; 
+    private bool isSinking = false; 
+
     void Start()
     {
-        buttonStartPosition = button.position;
+        initialPosition = transform.position; 
     }
 
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (isSinking)
         {
-            button.position -= Vector3.up * buttonDownDistance;
+            
+            Vector3 targetPosition = new Vector3(initialPosition.x, initialPosition.y - sinkDistance, initialPosition.z);
+            float step = sinkSpeed * Time.deltaTime;
+
+            
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (!isSinking && (playerLayer & 1 << collision.gameObject.layer) != 0)
         {
-            button.position = buttonStartPosition;
+            isSinking = true;
         }
     }
 }
